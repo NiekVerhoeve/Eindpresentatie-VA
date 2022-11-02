@@ -458,3 +458,20 @@ expl2['tellen'] = expl2['tellen'] + 1
 fig4 = px.line(expl2, x='begindatum', y='tellen')
 fig4.show()
 
+#Adding st
+col1, col2 = st.columns(2)
+with col1:
+    tab1, tab2 = st.tabs(['Visualisatie','Informatie'])
+#Aantal per cat
+    with tab1:
+        tab1.plotly_chart(fig4)
+    with tab2:
+        tab2.subheader("Informatie")
+with col2:
+    tab3, tab4 = st.tabs(['Visualisatie','Informatie'])
+#Lijnplot
+    with tab3:
+        tab3.plotly_chart(fig3)
+    with tab4:
+        tab4.subheader("Informatie")
+       
