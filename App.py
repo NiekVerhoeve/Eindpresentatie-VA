@@ -23,7 +23,9 @@ from dateutil import relativedelta
 # from geopy.extra.rate_limiter import RateLimiter
 import branca
 import geopandas as gpd
-# import streamlit as st
+import streamlit as st
+from streamlit_folium import folium_static
+import openpyxl
 
 
 # In[ ]:
@@ -361,7 +363,7 @@ for i, x in expl_coords.iterrows():
     popup = folium.Popup(iframe, max_width=2650) 
     folium.Circle(radius=10, color=color_producer(x['legend']), fill_color=color_producer(x['maanden_geldig']), fill_opacity=1, popup=popup, location=[expl_coords['Lat'][i], expl_coords['Lon'][i]]).add_to(m)
 
-m
+folium_static(m, width=1200)
 
 
 # In[ ]:
