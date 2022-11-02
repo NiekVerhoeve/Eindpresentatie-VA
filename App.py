@@ -9,24 +9,20 @@
 
 # In[ ]:
 
-
 import pandas as pd
 import numpy as np
-# import matplotlib.pyplot as plt
+from datetime import datetime, timedelta
+import streamlit as st
+import openpyxl
 import plotly.express as px
 import plotly.graph_objects as go
-from datetime import datetime
-from dateutil import relativedelta
-# from geopy.geocoders import Nominatim
-# import geopy
-# from geopy.extra.rate_limiter import RateLimiter
+import folium
 import branca
 import geopandas as gpd
-import streamlit as st
+import matplotlib.pyplot as plt
 from streamlit_folium import folium_static
-import openpyxl
-import folium
-
+import matplotlib.dates
+from dateutil import relativedelta
 
 # In[ ]:
 
