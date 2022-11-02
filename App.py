@@ -464,14 +464,31 @@ with col1:
     tab1, tab2 = st.tabs(['Visualisatie','Informatie'])
 #Aantal per cat
     with tab1:
-        tab1.plotly_chart(fig4)
+        tab1.plotly_chart(fig3)
     with tab2:
         tab2.subheader("Informatie")
 with col2:
     tab3, tab4 = st.tabs(['Visualisatie','Informatie'])
 #Lijnplot
     with tab3:
-        tab3.plotly_chart(fig3)
+        tab3.plotly_chart(fig4)
     with tab4:
         tab4.subheader("Informatie")
+
+ #Adding st
+col3, col4 = st.columns(2)
+with col3:
+    tab5, tab6 = st.tabs(['Visualisatie','Informatie'])
+#Boxplot
+    with tab5:
+        tab5.plotly_chart(fig1)
+    with tab6:
+        tab6.subheader("Informatie")
+with col4:
+    tab7, tab8 = st.tabs(['Visualisatie','Informatie'])
+#Scatter
+    with tab7:
+        tab7.plotly_chart(fig2)
+    with tab8:
+        tab8.subheader("Informatie")
        
