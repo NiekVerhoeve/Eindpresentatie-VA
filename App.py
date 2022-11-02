@@ -314,7 +314,13 @@ def add_categorical_legend(folium_map, title, colors, labels):
     return folium_map
 
 
-# In[ ]:
+#Setting up the page
+
+st.set_page_config(
+    layout="wide",
+    initial_sidebar_state="collapsed")
+
+st.title('VA-eindopdracht')
 
 
 #Making the folium map
