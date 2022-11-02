@@ -212,7 +212,22 @@ def color_producer(type):
 
 #  ik heb een functie gevonden op het internet voor het toevoegen van een categorische legenda:
 # (bron: https://stackoverflow.com/questions/65042654/how-to-add-categorical-legend-to-python-folium-map)
+# if Map, wrap in Figure
+    if isinstance(fig, folium.Map):
+        fig = folium.Figure().add_child(fig)
+        fig = add_categorical_legend(fig, title,
+                                         colors=colors,
+                                         labels=labels)
+        return components.html(
+            fig.render(), height=(fig.height or height) + 10, width=width
+        )
 
+    # if DualMap, get HTML representation
+    elif isinstance(fig, folium.plugins.DualMap) or isinstance(
+        fig, branca.element.Figure
+    ):
+        return components.html(fig._repr_html_(), height=height + 10, width=width)
+    
 def add_categorical_legend(folium_map, title, colors, labels):
     if len(colors) != len(labels):
         raise ValueError("colors and labels must have the same length.")
