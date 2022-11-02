@@ -12,7 +12,6 @@
 
 import pandas as pd
 import numpy as np
-import folium
 import matplotlib.pyplot as plt
 import plotly.express as px
 import plotly.graph_objects as go
@@ -26,6 +25,7 @@ import geopandas as gpd
 import streamlit as st
 from streamlit_folium import folium_static
 import openpyxl
+import folium
 
 
 # In[ ]:
