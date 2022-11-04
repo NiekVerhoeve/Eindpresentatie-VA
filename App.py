@@ -483,6 +483,7 @@ fig1.show()
 
 
 fig2 = px.box(overlast, y=[2014, 2015, 2016, 2017, 2018, 2019, 2020], labels={"variable": "Jaar van waarneming", "value": "Overlast index score"}, title= 'Som index scores per stadsdeel door de jaren heen')
+fig2.update_traces(marker_color='rgb(166,189,219)')
 fig2.show()
 
 
