@@ -406,7 +406,7 @@ with col_filter2:
 # #         popup = folium.Popup(iframe, max_width=2650) 
 # #         folium.Circle(radius=10, color=color_producer(x['legend']), fill_color=color_producer(x['legend']), fill_opacity=1, popup=popup, location=[expl_coords['Lat'][i], expl_coords['Lon'][i]]).add_to(m)
 
-    folium_static(m, width=1200)
+#     folium_static(m, width=1200)
 
 #Getting data for filter                                                                                 
 df_verlopen = expl_coords.loc[expl_coords['legend'] == 'Verlopen']
