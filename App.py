@@ -487,7 +487,7 @@ overlast2.drop(columns=['geoid', 'geometry', 'code', 'Prognose stadsdelen 2022, 
 # In[41]:
 
 
-fig1 = px.scatter(overlast2, x='inwoners', y=[2014, 2015, 2016, 2017, 2018, 2019, 2020])
+fig1 = px.scatter(overlast2, x='inwoners', y=[2014, 2015, 2016, 2017, 2018, 2019, 2020], labels={"inwoners": "Aantal inwoners per stadsdeel", "value": "Overlast index score"}, title='Overlast index door de jaren heen per stadsdeel')
 fig1.show()
 
 
@@ -500,7 +500,7 @@ fig1.show()
 # In[42]:
 
 
-fig2 = px.box(overlast, y=[2014, 2015, 2016, 2017, 2018, 2019, 2020])
+fig2 = px.box(overlast, y=[2014, 2015, 2016, 2017, 2018, 2019, 2020], labels={"variable": "Jaar van waarneming", "value": "Overlast index score"}, title= 'Som index scores per stadsdeel door de jaren geen')
 fig2.show()
 
 
@@ -521,7 +521,7 @@ aantal_per_categorie.columns = ['zaak_categorie', 'count']
 
 
 fig3 = px.bar(aantal_per_categorie, x='zaak_categorie', y = 'count', text_auto='.2s', 
-                labels={'count':'Aantal', 'zaak_categorie':'Zaak cetegorie'})
+                labels={'count':'Aantal', 'zaak_categorie':'Zaak cetegorie'}, title= 'Aantal vergunningen per categorie')
 
 fig3.update_layout(barmode='stack', xaxis={'categoryorder':'total descending'})
 fig3.update_traces(marker_color='rgb(166,189,219)', textfont_size=9, textangle=0, textposition="outside", cliponaxis=False)
@@ -536,7 +536,7 @@ overlast_totaal = overlast
 overlast_totaal = overlast.drop(index=[0,1,2,3,4,5,6])
 overlast_totaal_long = pd.melt(overlast_totaal, id_vars='stadsdeel', value_vars=[2014, 2015, 2016, 2017, 2018, 2019, 2020], value_name='Amsterdam', var_name= 'jaar')
 overlast_totaal_long =overlast_totaal_long.drop(columns=['stadsdeel'])
-fig5 = px.scatter(overlast_totaal_long, x='jaar', y='Amsterdam', trendline="ols")
+fig5 = px.scatter(overlast_totaal_long, x='jaar', y='Amsterdam', trendline="ols", labels={"jaar": "Jaar van waarneming", "Amsterdam": "Overlast index score"}, title='Gemiddelde overlast index van alle stadsdelen')
 
 #Fig 4
 
@@ -549,7 +549,7 @@ expl2 = expl.sort_values(by= 'begindatum')
 expl2.reset_index(inplace=True)
 expl2['tellen'] = expl2.index
 expl2['tellen'] = expl2['tellen'] + 1
-fig4 = px.line(expl2, x='begindatum', y='tellen')
+fig4 = px.line(expl2, x='begindatum', y='tellen', labels={"begindatum": "Datum vergeven van vergunning", "tellen": "Aantal vergunningen"}, title='Cumulatieve som verleende vergunningen door de jaren heen')
 fig4.show()
 
 #Adding st
