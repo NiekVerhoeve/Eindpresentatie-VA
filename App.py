@@ -332,7 +332,7 @@ with col_filter1:
    foliumfilter1 = st.selectbox("Choropleth on/off",("On","Off"))
 
 with col_filter2:
-    st.image(image, caption='Legenda', height=100)
+    st.image(image, caption='Legenda', width=100)
 
 
 #Making the folium map
