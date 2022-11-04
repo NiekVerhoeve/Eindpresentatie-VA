@@ -316,7 +316,7 @@ def add_categorical_legend(folium_map, title, colors, labels):
 
 
 #Setting up the page
-image = Image.open('legenda.jpg')
+image = Image.open('legenda.jpg', use_column_width=False)
 
 st.set_page_config(
     layout="wide",
