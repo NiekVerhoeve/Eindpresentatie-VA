@@ -316,7 +316,7 @@ def add_categorical_legend(folium_map, title, colors, labels):
 
 
 #Setting up the page
-image = Image.open('legenda.jpg', use_column_width=False)
+image = Image.open('legenda.jpg')
 
 st.set_page_config(
     layout="wide",
@@ -332,7 +332,7 @@ with col_filter1:
    foliumfilter1 = st.selectbox("Choropleth on/off",("On","Off"))
 
 with col_filter2:
-    st.image(image, caption='Legenda')
+    st.image(image, caption='Legenda', use_column_width=False)
 
 
 #Making the folium map
