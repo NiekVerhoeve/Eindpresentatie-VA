@@ -330,7 +330,7 @@ with col_filter1:
    foliumfilter1 = st.selectbox("Choropleth on/off",("On","Off"))
 
 with col_filter2:
-    foliumfilter2 = st.multiselect('Aantal maanden geldig', ['Verlopen', '0-6 maanden', '6-12 maanden', '12-18 maanden', '18-30 maanden', 'Meer dan 30 maanden'])
+    st.write('tekst)
 
 
 #Making the folium map
