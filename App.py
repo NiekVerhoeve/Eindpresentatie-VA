@@ -349,7 +349,7 @@ if foliumfilter1 == 'Choropleth on':
     colors = []
 
     for x in expl_coords['legend'].unique().tolist():
-    colors.append(color_producer(x))
+        colors.append(color_producer(x))
 
     # Voer eerst de code in de cel hieronder uit, voordat de functie add_categorical_legend werkt
     m = add_categorical_legend(m, 'Aantal maanden geldig',
@@ -388,7 +388,7 @@ else:
     colors = []
 
     for x in expl_coords['legend'].unique().tolist():
-    colors.append(color_producer(x))
+        colors.append(color_producer(x))
 
     # Voer eerst de code in de cel hieronder uit, voordat de functie add_categorical_legend werkt
     m = add_categorical_legend(m, 'Aantal maanden geldig',
