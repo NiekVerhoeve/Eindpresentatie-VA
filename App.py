@@ -440,6 +440,10 @@ overlast2.drop(columns=['geoid', 'geometry', 'code', 'Prognose stadsdelen 2022, 
 
 # In[ ]:
 
+overlast_totaal2 = overlast
+overlast_totaal2 = overlast.drop(index=[7])
+overlast_totaal_long2 = pd.melt(overlast_totaal2, id_vars='stadsdeel', value_vars=[2014, 2015, 2016, 2017, 2018, 2019, 2020], value_name='Amsterdam', var_name= 'jaar')
+fig6 = px.line(overlast_totaal_long2, x='jaar', y='Amsterdam', color='stadsdeel', labels={"jaar": "Jaren", "value": "Overlast index score"}, title='Verloop overlastindex per stadsdeel')
 
 #fig 1
 
@@ -562,14 +566,25 @@ with col4:
         tab8.write('De outlier boven in de boxplot visualisatie representeerd stadsdeel centrum')
         
 # #Adding st
-# col5 = st.columns()
-# with col5:
-tab9, tab10 = st.tabs(['Visualisatie','Informatie'])
+col5,col6 = st.columns(2)
+with col5:
+    tab9, tab10 = st.tabs(['Visualisatie','Informatie'])
 #Aantal per cat
-with tab9:
-    tab9.plotly_chart(fig5)
-with tab10:
-    tab10.subheader("Informatie")
-    tab10.write('veiligheidsindex van Amsterdam waarin de overlast verwerkt is.')
-    tab10.write('100 is de standaardwaarde. Eronder is minder dan gemiddeld, erboven is meer dan gemiddeld')
-    tab10.write('Bron: https://cms.onderzoek-en-statistiek.nl/uploads/Veiligheids_Index_2020_3_c59390af4e.xlsx') 
+    with tab9:
+        tab9.plotly_chart(fig5)
+    with tab10:
+        tab10.subheader("Informatie")
+        tab10.write('veiligheidsindex van Amsterdam waarin de overlast verwerkt is.')
+        tab10.write('100 is de standaardwaarde. Eronder is minder dan gemiddeld, erboven is meer dan gemiddeld')
+        tab10.write('Bron: https://cms.onderzoek-en-statistiek.nl/uploads/Veiligheids_Index_2020_3_c59390af4e.xlsx')
+        
+with col6:
+    tab11, tab12 = st.tabs(['Visualisatie','Informatie'])
+#Aantal per cat
+    with tab11:
+        tab11.plotly_chart(fig6)
+    with tab12:
+        tab12.subheader("Informatie")
+        tab12.write('veiligheidsindex van Amsterdam waarin de overlast verwerkt is.')
+        tab12.write('100 is de standaardwaarde. Eronder is minder dan gemiddeld, erboven is meer dan gemiddeld')
+        tab12.write('Bron: https://cms.onderzoek-en-statistiek.nl/uploads/Veiligheids_Index_2020_3_c59390af4e.xlsx')
