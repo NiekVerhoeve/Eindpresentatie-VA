@@ -365,18 +365,19 @@ with col_map:
                         legend_name='Aantal inwoners'
                         ).add_to(m)
         features = {}
-        for row in pd.unique(expl_coords["legend"]):
-            features[row] = folium.FeatureGroup(name=row)
+        for x in pd.unique(expl_coords["legend"]):
+            features[x] = folium.FeatureGroup(name=x)
 
         for i, x in expl_coords.iterrows():
 
             html="<strong>Naam:</strong> " + x['zaaknaam'] + "<br><strong>Adres:</strong> " + x['adres'] + "<br><strong>Categorie:</strong> " + x['zaak_categorie'] + "<br><strong>Openingstijden op vergunning:</strong>" + "<br><br>Van zondag t/m donderdag: " + "<br>Van: " + x['openingstijden_zo_do_van'] + " Tot " + x['openingstijden_zo_do_tot'] + "<br><br>Vrijdag en zaterdag: " + "<br>Van: " + x['openingstijden_vr_za_van'] + " Tot " + x['openingstijden_vr_za_tot'] + "<br><br><strong>Geldigheid:</strong> " + x['geldig/verlopen']
             iframe = branca.element.IFrame(html=html, width=500, height=300)
             popup = folium.Popup(iframe, max_width=2650) 
-            folium.Circle(radius=10, color=color_producer(x['legend']), fill_color=color_producer(x['legend']), fill_opacity=1, popup=popup, location=[expl_coords['Lat'][i], expl_coords['Lon'][i]]).add_to(m)
-
-        for row in pd.unique(expl_coords["legend"]):
-            features[row].add_to(m)
+            circ = folium.Circle(radius=10, color=color_producer(x['legend']), fill_color=color_producer(x['legend']), fill_opacity=1, popup=popup, location=[expl_coords['Lat'][i], expl_coords['Lon'][i]]).add_to(m)
+            circ.add_to(features[x['marker_color']])
+        
+        for x in pd.unique(expl_coords["legend"]):
+            features[x].add_to(m)
 
         folium.LayerControl().add_to(m)
 
