@@ -540,5 +540,4 @@ with col4:
     with tab8:
         tab8.subheader("Informatie")
 
- st.plotly_chart(fig5)
-       
+st.plotly_chart(fig5)       
