@@ -327,13 +327,7 @@ st.title('VA-eindopdracht')
 
 #Folium filters
 
-col_filter1, col_filter2 = st.columns(2)
-with col_filter1:
-   foliumfilter1 = st.selectbox("Choropleth on/off",("On","Off"))
-
-with col_filter2:
-    st.image(image, caption='Legenda', width=150)
-
+foliumfilter1 = st.selectbox("Choropleth on/off",("On","Off"))
 
 #Making the folium map
 
