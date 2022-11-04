@@ -487,7 +487,7 @@ overlast2.drop(columns=['geoid', 'geometry', 'code', 'Prognose stadsdelen 2022, 
 # In[41]:
 
 
-fig1 = px.scatter(overlast2, x='inwoners', y=[2014, 2015, 2016, 2017, 2018, 2019, 2020], labels={"inwoners": "Aantal inwoners per stadsdeel", "value": "Overlast index score"}, title='Overlast index door de jaren heen per stadsdeel')
+fig1 = px.scatter(overlast2, x='inwoners', y=[2014, 2015, 2016, 2017, 2018, 2019, 2020], labels={"inwoners": "Aantal inwoners per stadsdeel", "value": "Overlast index score", "variable": "Jaargang"}, title='Overlast index door de jaren heen per stadsdeel')
 fig1.show()
 
 
