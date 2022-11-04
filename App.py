@@ -367,9 +367,9 @@ if (foliumfilter1 == 'On'):
                     fill_color='Blues',                  
                     legend_name='Aantal inwoners'
                     ).add_to(m)
-    
+    features = {}
     for row in pd.unique(expl_coords["legend"]):
-    features[row] = folium.FeatureGroup(name=row)
+        features[row] = folium.FeatureGroup(name=row)
     
     for i, x in expl_coords.iterrows():
 
@@ -380,7 +380,7 @@ if (foliumfilter1 == 'On'):
         circ.add_to(features[row['legend']])
     
     for row in pd.unique(expl_coords["legend"]):
-    features[row].add_to(m)
+        features[row].add_to(m)
     
     folium.LayerControl().add_to(m)
     
