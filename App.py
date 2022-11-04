@@ -326,7 +326,7 @@ st.title('VA-eindopdracht')
 #Folium filters
 
 col_filter1, col_filter2 = st.columns(2)
-with col_filter_1:
+with col_filter1:
    foliumfilter1 = st.selectbox("Filter",("Choropleth on","Choropleth off"))
 
 with col_filter2:
