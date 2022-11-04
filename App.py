@@ -538,27 +538,27 @@ with col2:
 col3, col4 = st.columns(2)
 with col3:
     tab5, tab6 = st.tabs(['Visualisatie','Informatie'])
-#Boxplot
+#scatter
     with tab5:
         tab5.plotly_chart(fig1)
     with tab6:
         tab6.subheader("Informatie")
         tab6.write('veiligheidsindex van Amsterdam waarin de overlast in verwerkt is.')
         tab6.write('Bron: https://cms.onderzoek-en-statistiek.nl/uploads/Veiligheids_Index_2020_3_c59390af4e.xlsx')
-        tab6.write('In 2020 is te zien dat er door de gehele stads (in ieder stadsdeel) het meest overlast is ervaren. Dit is zichtbaar omdat de upper fence en lower fence dicht bij elkaar liggen ten opzicht van andere jaargangen.')
-        tab6.write('De outlier boven in de boxplot visualisatie representeerd stadsdeel centrum')
+        tab6.write('bevolkingsprognose waarin het aantal inwoners wordt weergeven')
+        tab6.write('Bron: https://cms.onderzoek-en-statistiek.nl/uploads/2022_bevolkingsprognose_tabel3_24f71bca0b.xlsx')
         
 with col4:
     tab7, tab8 = st.tabs(['Visualisatie','Informatie'])
-#Scatter
+#Boxplot
     with tab7:
         tab7.plotly_chart(fig2)
     with tab8:
-        tab8.subheader("Informatie")
+        tab8.subheader("Informatie")      
         tab8.write('veiligheidsindex van Amsterdam waarin de overlast in verwerkt is.')
         tab8.write('Bron: https://cms.onderzoek-en-statistiek.nl/uploads/Veiligheids_Index_2020_3_c59390af4e.xlsx')
-        tab8.write('bevolkingsprognose waarin het aantal inwoners wordt weergeven')
-        tab8.write('Bron: https://cms.onderzoek-en-statistiek.nl/uploads/2022_bevolkingsprognose_tabel3_24f71bca0b.xlsx')        
+        tab8.write('In 2020 is te zien dat er door de gehele stads (in ieder stadsdeel) het meest overlast is ervaren. Dit is zichtbaar omdat de upper fence en lower fence dicht bij elkaar liggen ten opzicht van andere jaargangen.')
+        tab8.write('De outlier boven in de boxplot visualisatie representeerd stadsdeel centrum')
         
 # #Adding st
 # col5 = st.columns()
