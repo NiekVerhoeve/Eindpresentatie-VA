@@ -327,7 +327,7 @@ st.title('VA-eindopdracht')
 
 col_filter1, col_filter2 = st.columns(2)
 with col_filter1:
-   foliumfilter1 = st.selectbox("Filter",("Choropleth on","Choropleth off"))
+   foliumfilter1 = st.selectbox("Choropleth on/off",("On","Off"))
 
 with col_filter2:
     st.write('tekst')
@@ -338,7 +338,7 @@ with col_filter2:
 
 # In[27]:
 
-if (foliumfilter1 == 'Choropleth on'):
+if (foliumfilter1 == 'On'):
     m = folium.Map(location=[52.371661, 4.889955], zoom_start=11.5)
 
     folium.TileLayer(
