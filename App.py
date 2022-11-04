@@ -484,6 +484,14 @@ fig3.show()
 # In[ ]:
 
 
+#regressielijn maken van de overlastindex
+overlast_totaal = overlast
+overlast_totaal = overlast.drop(index=[0,1,2,3,4,5,6])
+overlast_totaal_long = pd.melt(overlast_totaal, id_vars='stadsdeel', value_vars=[2014, 2015, 2016, 2017, 2018, 2019, 2020], value_name='Amsterdam', var_name= 'jaar')
+overlast_totaal_long =overlast_totaal_long.drop(columns=['stadsdeel'])
+overlast_totaal_long
+fig5 = px.scatter(overlast_totaal_long, x='jaar', y='Amsterdam', trendline="ols")
+
 #Fig 4
 
 
@@ -531,4 +539,6 @@ with col4:
         tab7.plotly_chart(fig2)
     with tab8:
         tab8.subheader("Informatie")
+
+ st.plotly_chart(fig5)
        
