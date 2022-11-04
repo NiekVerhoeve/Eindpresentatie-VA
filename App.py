@@ -540,7 +540,7 @@ with col4:
         tab8.subheader("Informatie")
         
 #Adding st
-col5 = st.columns(1)
+col5 = st.columns()
 with col5:
     tab9, tab10 = st.tabs(['Visualisatie','Informatie'])
 #Aantal per cat
