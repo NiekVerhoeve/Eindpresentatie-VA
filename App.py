@@ -374,7 +374,7 @@ with col_map:
             iframe = branca.element.IFrame(html=html, width=500, height=300)
             popup = folium.Popup(iframe, max_width=2650) 
             circ = folium.Circle(radius=10, color=color_producer(x['legend']), fill_color=color_producer(x['legend']), fill_opacity=1, popup=popup, location=[expl_coords['Lat'][i], expl_coords['Lon'][i]]).add_to(m)
-            circ.add_to(features[x['marker_color']])
+            circ.add_to(features[x['legend']])
         
         for x in pd.unique(expl_coords["legend"]):
             features[x].add_to(m)
