@@ -539,15 +539,15 @@ with col4:
     with tab8:
         tab8.subheader("Informatie")
         
-#Adding st
-col5 = st.columns()
-with col5:
-    tab9, tab10 = st.tabs(['Visualisatie','Informatie'])
+# #Adding st
+# col5 = st.columns()
+# with col5:
+tab9, tab10 = st.tabs(['Visualisatie','Informatie'])
 #Aantal per cat
-    with tab9:
-        tab9.plotly_chart(fig5)
-    with tab10:
-        tab10.subheader("Informatie")
-        tab10.write('veiligheidsindex van Amsterdam waarin de overlast in verwerkt is.')
-        tab10.write('100 is de standaardwaarde. Eronder is minder dan gemiddeld, erboven is meer dan gemiddeld')
-        tab10.write('Bron: https://cms.onderzoek-en-statistiek.nl/uploads/Veiligheids_Index_2020_3_c59390af4e.xlsx') 
+with tab9:
+    tab9.plotly_chart(fig5)
+with tab10:
+    tab10.subheader("Informatie")
+    tab10.write('veiligheidsindex van Amsterdam waarin de overlast in verwerkt is.')
+    tab10.write('100 is de standaardwaarde. Eronder is minder dan gemiddeld, erboven is meer dan gemiddeld')
+    tab10.write('Bron: https://cms.onderzoek-en-statistiek.nl/uploads/Veiligheids_Index_2020_3_c59390af4e.xlsx') 
