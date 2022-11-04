@@ -330,7 +330,7 @@ with col_filter1:
    foliumfilter1 = st.selectbox("Choropleth on/off",("On","Off"))
 
 with col_filter2:
-    st.write('tekst)
+    st.write('tekst')
 
 
 #Making the folium map
