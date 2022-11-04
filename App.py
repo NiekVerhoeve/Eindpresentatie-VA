@@ -325,11 +325,11 @@ st.title('VA-eindopdracht')
 
 #Folium filters
 
-tab_filter1, tab_filter2 = st.tabs()
-with tab_filter_1:
+col_filter1, col_filter2 = st.columns(2)
+with col_filter_1:
    foliumfilter1 = st.selectbox("Filter",("Choropleth on","Choropleth off"))
 
-with tab_filter2:
+with col_filter2:
     st.write('tekst')
 
 
