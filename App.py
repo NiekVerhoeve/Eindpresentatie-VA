@@ -458,7 +458,7 @@ if (start_filter, end_filter == 'Verlopen'):
 
     folium_static(m, width=1200)
 
-elif: (start_filter, end_filter == '0-6 maanden')
+elif (start_filter, end_filter == '0-6 maanden')
     m = folium.Map(location=[52.371661, 4.889955], zoom_start=11.5)
 
     folium.TileLayer(
