@@ -458,7 +458,7 @@ if (start_filter, end_filter == 'Verlopen'):
 
     folium_static(m, width=1200)
 
-if (start_filter, end_filter == '0-6 maanden'):
+elif (start_filter, end_filter == '0-6 maanden'):
     m = folium.Map(location=[52.371661, 4.889955], zoom_start=11.5)
 
     folium.TileLayer(
@@ -495,9 +495,8 @@ if (start_filter, end_filter == '0-6 maanden'):
         popup = folium.Popup(iframe, max_width=2650) 
         folium.Circle(radius=10, color=color_producer(x['legend']), fill_color=color_producer(x['legend']), fill_opacity=1, popup=popup, location=[df_06['Lat'][i], df_06['Lon'][i]]).add_to(m)
 
-    folium_static(m, width=1200)
   
-if (start_filter, end_filter == '6-12 maanden'):
+elif (start_filter, end_filter == '6-12 maanden'):
     m = folium.Map(location=[52.371661, 4.889955], zoom_start=11.5)
 
     folium.TileLayer(
@@ -533,8 +532,6 @@ if (start_filter, end_filter == '6-12 maanden'):
         iframe = branca.element.IFrame(html=html, width=500, height=300)
         popup = folium.Popup(iframe, max_width=2650) 
         folium.Circle(radius=10, color=color_producer(x['legend']), fill_color=color_producer(x['legend']), fill_opacity=1, popup=popup, location=[df_612['Lat'][i], df_612['Lon'][i]]).add_to(m)
-
-    folium_static(m, width=1200)
 
 #Getting data for fig 1
 
