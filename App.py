@@ -330,7 +330,7 @@ with col_filter1:
    foliumfilter1 = st.selectbox("Choropleth on/off",("On","Off"))
 
 with col_filter2:
-    start_filter, end_filter = st.select_slider('Aantal maanden geldig',options=['Verlopen', '0-6 maanden', '6-12 maanden', value=('Verlopen', '6-12 maanden'))
+    start_filter, end_filter = st.select_slider('Aantal maanden geldig',options=['Verlopen', '0-6 maanden', '6-12 maanden'], value=('Verlopen', '6-12 maanden'))
 
 
 #Making the folium map
