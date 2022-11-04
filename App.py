@@ -329,12 +329,16 @@ tab_filter1, tab_filter2 = st.tabs()
 with tab_filter_1:
    foliumfilter1 = st.selectbox("Filter",("Choropleth on","Choropleth off"))
 
+with tab_filter2:
+    st.write('tekst')
+
+
 #Making the folium map
 
 
 # In[27]:
 
-if foliumfilter1 == 'Choropleth on':
+if (foliumfilter1 == 'Choropleth on'):
     m = folium.Map(location=[52.371661, 4.889955], zoom_start=11.5)
 
     folium.TileLayer(
