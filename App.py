@@ -459,7 +459,7 @@ fig1.show()
 # In[42]:
 
 
-fig2 = px.box(overlast, y=[2014, 2015, 2016, 2017, 2018, 2019, 2020], labels={"variable": "Jaar van waarneming", "value": "Overlast index score"}, title= 'Som index scores per stadsdeel door de jaren geen')
+fig2 = px.box(overlast, y=[2014, 2015, 2016, 2017, 2018, 2019, 2020], labels={"variable": "Jaar van waarneming", "value": "Overlast index score"}, title= 'Som index scores per stadsdeel door de jaren heen')
 fig2.show()
 
 
@@ -520,6 +520,9 @@ with col1:
         tab1.plotly_chart(fig3)
     with tab2:
         tab2.subheader("Informatie")
+        tab2.write('Data verkregen via data platform van gemeente Amsterdam')
+        tab2.write('Data bestand: Verleende exploitatievergunningen horeca met terrasgrenzen en ontheffingen')
+        tab2.write('https://data.amsterdam.nl/datasets/GsY50tEkoJKCGw/verleende-exploitatievergunningen-horeca-met-terrasgrenzen-en-ontheffingen/')
 with col2:
     tab3, tab4 = st.tabs(['Visualisatie','Informatie'])
 #Lijnplot
@@ -527,6 +530,9 @@ with col2:
         tab3.plotly_chart(fig4)
     with tab4:
         tab4.subheader("Informatie")
+        tab4.write('Data verkregen via data platform van gemeente Amsterdam')
+        tab4.write('Data bestand: Verleende exploitatievergunningen horeca met terrasgrenzen en ontheffingen')
+        tab4.write('https://data.amsterdam.nl/datasets/GsY50tEkoJKCGw/verleende-exploitatievergunningen-horeca-met-terrasgrenzen-en-ontheffingen/')
 
  #Adding st
 col3, col4 = st.columns(2)
@@ -537,6 +543,11 @@ with col3:
         tab5.plotly_chart(fig1)
     with tab6:
         tab6.subheader("Informatie")
+        tab6.write('veiligheidsindex van Amsterdam waarin de overlast in verwerkt is.')
+        tab6.write('Bron: https://cms.onderzoek-en-statistiek.nl/uploads/Veiligheids_Index_2020_3_c59390af4e.xlsx')
+        tab6.write('In 2020 is te zien dat er door de gehele stads (in ieder stadsdeel) het meest overlast is ervaren. Dit is zichtbaar omdat de upper fence en lower fence dicht bij elkaar liggen ten opzicht van andere jaargangen.')
+        tab6.write('De outlier boven in de boxplot visualisatie representeerd stadsdeel centrum')
+        
 with col4:
     tab7, tab8 = st.tabs(['Visualisatie','Informatie'])
 #Scatter
@@ -544,6 +555,10 @@ with col4:
         tab7.plotly_chart(fig2)
     with tab8:
         tab8.subheader("Informatie")
+        tab8.write('veiligheidsindex van Amsterdam waarin de overlast in verwerkt is.')
+        tab8.write('Bron: https://cms.onderzoek-en-statistiek.nl/uploads/Veiligheids_Index_2020_3_c59390af4e.xlsx')
+        tab8.write('bevolkingsprognose waarin het aantal inwoners wordt weergeven')
+        tab8.write('Bron: https://cms.onderzoek-en-statistiek.nl/uploads/2022_bevolkingsprognose_tabel3_24f71bca0b.xlsx')        
         
 # #Adding st
 # col5 = st.columns()
@@ -554,6 +569,6 @@ with tab9:
     tab9.plotly_chart(fig5)
 with tab10:
     tab10.subheader("Informatie")
-    tab10.write('veiligheidsindex van Amsterdam waarin de overlast in verwerkt is.')
+    tab10.write('veiligheidsindex van Amsterdam waarin de overlast verwerkt is.')
     tab10.write('100 is de standaardwaarde. Eronder is minder dan gemiddeld, erboven is meer dan gemiddeld')
     tab10.write('Bron: https://cms.onderzoek-en-statistiek.nl/uploads/Veiligheids_Index_2020_3_c59390af4e.xlsx') 
