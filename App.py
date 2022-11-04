@@ -330,7 +330,7 @@ with col_filter1:
    foliumfilter1 = st.selectbox("Choropleth on/off",("On","Off"))
 
 with col_filter2:
-    foliumfilter2 = st.multiselect('Aantal maanden geldig', ['Verlopen', '0-6 maanden', '6-12 maanden', '12-18 maanden', '18-30 maanden', 'Meer dan 30 maanden'])
+    foliumfilter2 = st.multiselect('Aantal maanden geldig', expl_coords.legend.unique())
 
 
 #Making the folium map
@@ -416,36 +416,6 @@ df_1218 = expl_coords.loc[expl_coords['legend'] == '12-18 maanden']
 df_1830 = expl_coords.loc[expl_coords['legend'] == '18-30 maanden']
 df_30 = expl_coords.loc[expl_coords['legend'] == 'Meer dan 30 maanden']
                                                                                  
-                                                                                 
-# In[ ]:
-if (foliumfilter2 == 'Verlopen'):
-
-    colors = []
-
-    for x in expl_coords['legend'].unique().tolist():
-        colors.append(color_producer(x))
-
-    # Voer eerst de code in de cel hieronder uit, voordat de functie add_categorical_legend werkt
-    m = add_categorical_legend(m, 'Aantal maanden geldig',
-                             colors = colors,
-                           labels = expl_coords['legend'].unique().tolist())
-
-#     folium.Choropleth(geo_data=stadsdelen,
-#                     data=stadsdelen,
-#                     columns=['geoid', 'inwoners'],
-#                     key_on='feature.id',
-#                     fill_color='Blues',                  
-#                     legend_name='Aantal inwoners'
-#                     ).add_to(m)
-
-    for i, x in df_verlopen.iterrows():
-
-        html="<strong>Naam:</strong> " + x['zaaknaam'] + "<br><strong>Adres:</strong> " + x['adres'] + "<br><strong>Categorie:</strong> " + x['zaak_categorie'] + "<br><strong>Openingstijden op vergunning:</strong>" + "<br><br>Van zondag t/m donderdag: " + "<br>Van: " + x['openingstijden_zo_do_van'] + " Tot " + x['openingstijden_zo_do_tot'] + "<br><br>Vrijdag en zaterdag: " + "<br>Van: " + x['openingstijden_vr_za_van'] + " Tot " + x['openingstijden_vr_za_tot'] + "<br><br><strong>Geldigheid:</strong> " + x['geldig/verlopen']
-        iframe = branca.element.IFrame(html=html, width=500, height=300)
-        popup = folium.Popup(iframe, max_width=2650) 
-        folium.Circle(radius=10, color=color_producer(x['legend']), fill_color=color_producer(x['legend']), fill_opacity=1, popup=popup, location=[df_verlopen['Lat'][i], df_verlopen['Lon'][i]]).add_to(m)
-
-    folium_static(m, width=1200)
 
 # In[28]:
 
