@@ -338,75 +338,75 @@ with col_filter2:
 
 # In[27]:
 
-# if (foliumfilter1 == 'On'):
-#     m = folium.Map(location=[52.371661, 4.889955], zoom_start=11.5)
+if (foliumfilter1 == 'On'):
+    m = folium.Map(location=[52.371661, 4.889955], zoom_start=11.5)
 
-#     folium.TileLayer(
-#          tiles='https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',
-#         attr='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
-#         max_zoom=6
-#         # name='darkmatter',
-#         # control=False,
-#         # opacity=0.7
-#     ).add_to(m)
+    folium.TileLayer(
+         tiles='https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',
+        attr='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+        max_zoom=6
+        # name='darkmatter',
+        # control=False,
+        # opacity=0.7
+    ).add_to(m)
 
-#     colors = []
+    colors = []
 
-#     for x in expl_coords['legend'].unique().tolist():
-#         colors.append(color_producer(x))
+    for x in expl_coords['legend'].unique().tolist():
+        colors.append(color_producer(x))
 
-#     # Voer eerst de code in de cel hieronder uit, voordat de functie add_categorical_legend werkt
-#     m = add_categorical_legend(m, 'Aantal maanden geldig',
-#                              colors = colors,
-#                            labels = expl_coords['legend'].unique().tolist())
+    # Voer eerst de code in de cel hieronder uit, voordat de functie add_categorical_legend werkt
+    m = add_categorical_legend(m, 'Aantal maanden geldig',
+                             colors = colors,
+                           labels = expl_coords['legend'].unique().tolist())
 
-#     folium.Choropleth(geo_data=stadsdelen,
-#                     data=stadsdelen,
-#                     columns=['geoid', 'inwoners'],
-#                     key_on='feature.id',
-#                     fill_color='Blues',                  
-#                     legend_name='Aantal inwoners'
-#                     ).add_to(m)
+    folium.Choropleth(geo_data=stadsdelen,
+                    data=stadsdelen,
+                    columns=['geoid', 'inwoners'],
+                    key_on='feature.id',
+                    fill_color='Blues',                  
+                    legend_name='Aantal inwoners'
+                    ).add_to(m)
 
-# #     for i, x in expl_coords.iterrows():
+    for i, x in expl_coords.iterrows():
 
-# #         html="<strong>Naam:</strong> " + x['zaaknaam'] + "<br><strong>Adres:</strong> " + x['adres'] + "<br><strong>Categorie:</strong> " + x['zaak_categorie'] + "<br><strong>Openingstijden op vergunning:</strong>" + "<br><br>Van zondag t/m donderdag: " + "<br>Van: " + x['openingstijden_zo_do_van'] + " Tot " + x['openingstijden_zo_do_tot'] + "<br><br>Vrijdag en zaterdag: " + "<br>Van: " + x['openingstijden_vr_za_van'] + " Tot " + x['openingstijden_vr_za_tot'] + "<br><br><strong>Geldigheid:</strong> " + x['geldig/verlopen']
-# #         iframe = branca.element.IFrame(html=html, width=500, height=300)
-# #         popup = folium.Popup(iframe, max_width=2650) 
-# #         folium.Circle(radius=10, color=color_producer(x['legend']), fill_color=color_producer(x['legend']), fill_opacity=1, popup=popup, location=[expl_coords['Lat'][i], expl_coords['Lon'][i]]).add_to(m)
+        html="<strong>Naam:</strong> " + x['zaaknaam'] + "<br><strong>Adres:</strong> " + x['adres'] + "<br><strong>Categorie:</strong> " + x['zaak_categorie'] + "<br><strong>Openingstijden op vergunning:</strong>" + "<br><br>Van zondag t/m donderdag: " + "<br>Van: " + x['openingstijden_zo_do_van'] + " Tot " + x['openingstijden_zo_do_tot'] + "<br><br>Vrijdag en zaterdag: " + "<br>Van: " + x['openingstijden_vr_za_van'] + " Tot " + x['openingstijden_vr_za_tot'] + "<br><br><strong>Geldigheid:</strong> " + x['geldig/verlopen']
+        iframe = branca.element.IFrame(html=html, width=500, height=300)
+        popup = folium.Popup(iframe, max_width=2650) 
+        folium.Circle(radius=10, color=color_producer(x['legend']), fill_color=color_producer(x['legend']), fill_opacity=1, popup=popup, location=[expl_coords['Lat'][i], expl_coords['Lon'][i]]).add_to(m)
 
-#     folium_static(m, width=1200)
+    folium_static(m, width=1200)
     
-# else:
-#     m = folium.Map(location=[52.371661, 4.889955], zoom_start=11.5)
+else:
+    m = folium.Map(location=[52.371661, 4.889955], zoom_start=11.5)
 
-#     folium.TileLayer(
-#          tiles='https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',
-#         attr='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
-#         max_zoom=6
-#         # name='darkmatter',
-#         # control=False,
-#         # opacity=0.7
-#     ).add_to(m)
+    folium.TileLayer(
+         tiles='https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',
+        attr='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+        max_zoom=6
+        # name='darkmatter',
+        # control=False,
+        # opacity=0.7
+    ).add_to(m)
 
-#     colors = []
+    colors = []
 
-#     for x in expl_coords['legend'].unique().tolist():
-#         colors.append(color_producer(x))
+    for x in expl_coords['legend'].unique().tolist():
+        colors.append(color_producer(x))
 
-#     # Voer eerst de code in de cel hieronder uit, voordat de functie add_categorical_legend werkt
-#     m = add_categorical_legend(m, 'Aantal maanden geldig',
-#                              colors = colors,
-#                            labels = expl_coords['legend'].unique().tolist())
+    # Voer eerst de code in de cel hieronder uit, voordat de functie add_categorical_legend werkt
+    m = add_categorical_legend(m, 'Aantal maanden geldig',
+                             colors = colors,
+                           labels = expl_coords['legend'].unique().tolist())
 
-# #     for i, x in expl_coords.iterrows():
+    for i, x in expl_coords.iterrows():
 
-# #         html="<strong>Naam:</strong> " + x['zaaknaam'] + "<br><strong>Adres:</strong> " + x['adres'] + "<br><strong>Categorie:</strong> " + x['zaak_categorie'] + "<br><strong>Openingstijden op vergunning:</strong>" + "<br><br>Van zondag t/m donderdag: " + "<br>Van: " + x['openingstijden_zo_do_van'] + " Tot " + x['openingstijden_zo_do_tot'] + "<br><br>Vrijdag en zaterdag: " + "<br>Van: " + x['openingstijden_vr_za_van'] + " Tot " + x['openingstijden_vr_za_tot'] + "<br><br><strong>Geldigheid:</strong> " + x['geldig/verlopen']
-# #         iframe = branca.element.IFrame(html=html, width=500, height=300)
-# #         popup = folium.Popup(iframe, max_width=2650) 
-# #         folium.Circle(radius=10, color=color_producer(x['legend']), fill_color=color_producer(x['legend']), fill_opacity=1, popup=popup, location=[expl_coords['Lat'][i], expl_coords['Lon'][i]]).add_to(m)
+        html="<strong>Naam:</strong> " + x['zaaknaam'] + "<br><strong>Adres:</strong> " + x['adres'] + "<br><strong>Categorie:</strong> " + x['zaak_categorie'] + "<br><strong>Openingstijden op vergunning:</strong>" + "<br><br>Van zondag t/m donderdag: " + "<br>Van: " + x['openingstijden_zo_do_van'] + " Tot " + x['openingstijden_zo_do_tot'] + "<br><br>Vrijdag en zaterdag: " + "<br>Van: " + x['openingstijden_vr_za_van'] + " Tot " + x['openingstijden_vr_za_tot'] + "<br><br><strong>Geldigheid:</strong> " + x['geldig/verlopen']
+        iframe = branca.element.IFrame(html=html, width=500, height=300)
+        popup = folium.Popup(iframe, max_width=2650) 
+        folium.Circle(radius=10, color=color_producer(x['legend']), fill_color=color_producer(x['legend']), fill_opacity=1, popup=popup, location=[expl_coords['Lat'][i], expl_coords['Lon'][i]]).add_to(m)
 
-#     folium_static(m, width=1200)
+    folium_static(m, width=1200)
 
 #Getting data for filter                                                                                 
 df_verlopen = expl_coords.loc[expl_coords['legend'] == 'Verlopen']
@@ -418,122 +418,6 @@ df_30 = expl_coords.loc[expl_coords['legend'] == 'Meer dan 30 maanden']
                                                                                  
                                                                                  
 # In[ ]:
-
-if (start_filter, end_filter == 'Verlopen'):
-    m = folium.Map(location=[52.371661, 4.889955], zoom_start=11.5)
-
-    folium.TileLayer(
-         tiles='https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',
-        attr='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
-        max_zoom=6
-        # name='darkmatter',
-        # control=False,
-        # opacity=0.7
-    ).add_to(m)
-
-    colors = []
-
-    for x in expl_coords['legend'].unique().tolist():
-        colors.append(color_producer(x))
-
-    # Voer eerst de code in de cel hieronder uit, voordat de functie add_categorical_legend werkt
-    m = add_categorical_legend(m, 'Aantal maanden geldig',
-                             colors = colors,
-                           labels = expl_coords['legend'].unique().tolist())
-
-    folium.Choropleth(geo_data=stadsdelen,
-                    data=stadsdelen,
-                    columns=['geoid', 'inwoners'],
-                    key_on='feature.id',
-                    fill_color='Blues',                  
-                    legend_name='Aantal inwoners'
-                    ).add_to(m)
-
-    for i, x in df_verlopen.iterrows():
-
-        html="<strong>Naam:</strong> " + x['zaaknaam'] + "<br><strong>Adres:</strong> " + x['adres'] + "<br><strong>Categorie:</strong> " + x['zaak_categorie'] + "<br><strong>Openingstijden op vergunning:</strong>" + "<br><br>Van zondag t/m donderdag: " + "<br>Van: " + x['openingstijden_zo_do_van'] + " Tot " + x['openingstijden_zo_do_tot'] + "<br><br>Vrijdag en zaterdag: " + "<br>Van: " + x['openingstijden_vr_za_van'] + " Tot " + x['openingstijden_vr_za_tot'] + "<br><br><strong>Geldigheid:</strong> " + x['geldig/verlopen']
-        iframe = branca.element.IFrame(html=html, width=500, height=300)
-        popup = folium.Popup(iframe, max_width=2650) 
-        folium.Circle(radius=10, color=color_producer(x['legend']), fill_color=color_producer(x['legend']), fill_opacity=1, popup=popup, location=[df_verlopen['Lat'][i], df_verlopen['Lon'][i]]).add_to(m)
-
-    folium_static(m, width=1200)
-
-elif (start_filter, end_filter == '0-6 maanden'):
-    m = folium.Map(location=[52.371661, 4.889955], zoom_start=11.5)
-
-    folium.TileLayer(
-         tiles='https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',
-        attr='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
-        max_zoom=6
-        # name='darkmatter',
-        # control=False,
-        # opacity=0.7
-    ).add_to(m)
-
-    colors = []
-
-    for x in expl_coords['legend'].unique().tolist():
-        colors.append(color_producer(x))
-
-    # Voer eerst de code in de cel hieronder uit, voordat de functie add_categorical_legend werkt
-    m = add_categorical_legend(m, 'Aantal maanden geldig',
-                             colors = colors,
-                           labels = expl_coords['legend'].unique().tolist())
-
-    folium.Choropleth(geo_data=stadsdelen,
-                    data=stadsdelen,
-                    columns=['geoid', 'inwoners'],
-                    key_on='feature.id',
-                    fill_color='Blues',                  
-                    legend_name='Aantal inwoners'
-                    ).add_to(m)
-
-    for i, x in df_06.iterrows():
-
-        html="<strong>Naam:</strong> " + x['zaaknaam'] + "<br><strong>Adres:</strong> " + x['adres'] + "<br><strong>Categorie:</strong> " + x['zaak_categorie'] + "<br><strong>Openingstijden op vergunning:</strong>" + "<br><br>Van zondag t/m donderdag: " + "<br>Van: " + x['openingstijden_zo_do_van'] + " Tot " + x['openingstijden_zo_do_tot'] + "<br><br>Vrijdag en zaterdag: " + "<br>Van: " + x['openingstijden_vr_za_van'] + " Tot " + x['openingstijden_vr_za_tot'] + "<br><br><strong>Geldigheid:</strong> " + x['geldig/verlopen']
-        iframe = branca.element.IFrame(html=html, width=500, height=300)
-        popup = folium.Popup(iframe, max_width=2650) 
-        folium.Circle(radius=10, color=color_producer(x['legend']), fill_color=color_producer(x['legend']), fill_opacity=1, popup=popup, location=[df_06['Lat'][i], df_06['Lon'][i]]).add_to(m)
-
-  
-elif (start_filter, end_filter == '6-12 maanden'):
-    m = folium.Map(location=[52.371661, 4.889955], zoom_start=11.5)
-
-    folium.TileLayer(
-         tiles='https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',
-        attr='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
-        max_zoom=6
-        # name='darkmatter',
-        # control=False,
-        # opacity=0.7
-    ).add_to(m)
-
-    colors = []
-
-    for x in expl_coords['legend'].unique().tolist():
-        colors.append(color_producer(x))
-
-    # Voer eerst de code in de cel hieronder uit, voordat de functie add_categorical_legend werkt
-    m = add_categorical_legend(m, 'Aantal maanden geldig',
-                             colors = colors,
-                           labels = expl_coords['legend'].unique().tolist())
-
-    folium.Choropleth(geo_data=stadsdelen,
-                    data=stadsdelen,
-                    columns=['geoid', 'inwoners'],
-                    key_on='feature.id',
-                    fill_color='Blues',                  
-                    legend_name='Aantal inwoners'
-                    ).add_to(m)
-
-    for i, x in df_612.iterrows():
-
-        html="<strong>Naam:</strong> " + x['zaaknaam'] + "<br><strong>Adres:</strong> " + x['adres'] + "<br><strong>Categorie:</strong> " + x['zaak_categorie'] + "<br><strong>Openingstijden op vergunning:</strong>" + "<br><br>Van zondag t/m donderdag: " + "<br>Van: " + x['openingstijden_zo_do_van'] + " Tot " + x['openingstijden_zo_do_tot'] + "<br><br>Vrijdag en zaterdag: " + "<br>Van: " + x['openingstijden_vr_za_van'] + " Tot " + x['openingstijden_vr_za_tot'] + "<br><br><strong>Geldigheid:</strong> " + x['geldig/verlopen']
-        iframe = branca.element.IFrame(html=html, width=500, height=300)
-        popup = folium.Popup(iframe, max_width=2650) 
-        folium.Circle(radius=10, color=color_producer(x['legend']), fill_color=color_producer(x['legend']), fill_opacity=1, popup=popup, location=[df_612['Lat'][i], df_612['Lon'][i]]).add_to(m)
-
-#Getting data for fig 1
 
 
 # In[28]:
