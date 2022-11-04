@@ -23,6 +23,7 @@ import matplotlib.pyplot as plt
 from streamlit_folium import folium_static
 import matplotlib.dates
 from dateutil import relativedelta
+from PIL import Image
 
 # In[ ]:
 
@@ -315,6 +316,7 @@ def add_categorical_legend(folium_map, title, colors, labels):
 
 
 #Setting up the page
+image = Image.open('legenda.jpeg')
 
 st.set_page_config(
     layout="wide",
@@ -330,7 +332,7 @@ with col_filter1:
    foliumfilter1 = st.selectbox("Choropleth on/off",("On","Off"))
 
 with col_filter2:
-    st.write('tekst')
+    st.image(image, caption='Legenda')
 
 
 #Making the folium map
